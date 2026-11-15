@@ -1,0 +1,7 @@
+[
+  "Checkout must reject an expired card",
+  "Login must lock account after 3 failed attempts",
+  "User sees validation error on invalid credentials",
+  "Payment succeeds with valid credit card and confirms order",
+  "Password reset email is sent when user clicks forgot password"
+]

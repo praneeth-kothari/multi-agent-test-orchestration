@@ -1,0 +1,17 @@
+{
+  "requirement": "Checkout must reject an expired card",
+  "decomposition": "SUB-TASKS:\\n1. design test cases from acceptance criteria\\n2. author Playwright specs\\n3. review against coding standards\\n4. prepare triage hooks",
+  "test_cases": "CASES:\\n- happy path for: Checkout must reject an expired card\\n- negative path (invalid input)\\n- boundary values\\n- assertion on error message text",
+  "playwright_spec": "SPEC:\\ntest('user sees validation error on invalid credentials', async ({ page }) => {\\n  await page.goto('/checkout');\\n  await page.getByLabel('Card number').fill('4111111111111111');\\n  await page.getByLabel('Expiry date').fill('01/20');\\n  await page.getByRole('button', { name: 'Pay' }).click();\\n  await expect(page.getByRole('alert')).toContainText('Card expired');\\n});",
+  "review": "REVIEW: PASS\\n- web-first assertions used\\n- no hard-coded waits\\n- locators are role/text based\\nNOTE: extract locators into a Page Object.",
+  "triage_hooks": "TRIAGE HOOKS:\\n- classify failure: app defect | test defect | env | data\\n- attach trace + screenshot on failure\\n- emit structured summary",
+  "handoffs": 4,
+  "generated_at": "2026-11-15T14:30:00",
+  "run_log": [
+    {"phase": "decompose", "agent": "Orchestrator", "role": "manager", "chars": 142},
+    {"phase": "design", "agent": "Test Designer", "role": "test_designer", "chars": 145},
+    {"phase": "author", "agent": "Automation Author", "role": "automation_author", "chars": 363},
+    {"phase": "review", "agent": "Code Reviewer", "role": "reviewer", "chars": 136},
+    {"phase": "triage", "agent": "Triage Analyst", "role": "triage_analyst", "chars": 136}
+  ]
+}
