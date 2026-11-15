@@ -1,0 +1,7 @@
+{
+  "manager": "SUB-TASKS:\\n1. design test cases from acceptance criteria\\n2. author Playwright specs\\n3. review against coding standards\\n4. prepare triage hooks",
+  "test_designer": "CASES:\\n- happy path for: {prompt}\\n- negative path (invalid input)\\n- boundary values\\n- assertion on error message text",
+  "automation_author": "SPEC:\\ntest('user sees validation error on invalid credentials', async ({ page }) => {\\n  await page.goto('/login');\\n  await page.getByLabel('Username').fill('invalid');\\n  await page.getByLabel('Password').fill('wrong');\\n  await page.getByRole('button', { name: 'Sign in' }).click();\\n  await expect(page.getByRole('alert')).toContainText('Invalid credentials');\\n});",
+  "reviewer": "REVIEW: PASS\\n- web-first assertions used\\n- no hard-coded waits\\n- locators are role/text based\\nNOTE: extract locators into a Page Object.",
+  "triage_analyst": "TRIAGE HOOKS:\\n- classify failure: app defect | test defect | env | data\\n- attach trace + screenshot on failure\\n- emit structured summary"
+}
