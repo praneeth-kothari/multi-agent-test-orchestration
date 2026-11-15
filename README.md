@@ -36,7 +36,7 @@ Analysis     (writes      Agent    Agent
 ## Quickstart
 
 ```bash
-git clone https://github.com/praneethkothari82-Surya/multi-agent-test-orchestration.git
+git clone https://github.com/praneeth-kothari/multi-agent-test-orchestration.git
 cd multi-agent-test-orchestration
 python multiagent_test_harness.py "Checkout must reject an expired card"
 ```
